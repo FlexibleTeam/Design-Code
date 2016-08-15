@@ -1,7 +1,7 @@
 Working Files for TravisNeilson.com v7
 =============================
 
-![Project Preview](preview.jpg)
+![Project Preview](https://github.com/travisneilson/Design-Code/blob/master/preview.jpg)
 
 ## System Preparation
 
