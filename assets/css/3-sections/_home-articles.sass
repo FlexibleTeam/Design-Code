@@ -1,0 +1,89 @@
+section.articles
+  background:
+    image: url(../img/article-bg.jpg)
+    repeat: repeat
+
+  .col-1
+    display: flex
+    align-items: center
+
+  .home-cta
+    color: white
+    background: #3d96cb
+
+  .article-wrap
+    margin: -50px 0
+    +clearfix
+
+  .article-thumb
+    display: block
+    background:
+      size: cover
+      position: center
+    width: 25%
+    float: left
+    position: relative
+    overflow: hidden
+    opacity: 0
+    transform: translateX(-20px)
+    transition: all 300ms ease-in-out
+
+    &.is-emph
+      animation:
+        duration: 1s
+        fill-mode: both
+        name: tada
+      z-index: 1
+
+    &.is-visible
+      opacity: 1
+      transform: translateX(0px)
+
+    &:after
+      content: ''
+      display: block
+      padding-top: 100%
+
+  .article-meta
+    +position(absolute, 0)
+    background: fade-out(#3d96cb, .3)
+    color: white
+    padding: 10px
+    transform: translate(0%, 100%) scale(.5)
+    transition: all .2s ease-in-out
+    opacity: 0
+
+    .name
+      font-size: 18px
+      line-height: 1.2
+
+    .date
+      font-style: italic
+
+  .article-thumb:hover .article-meta
+    opacity: 1
+    transform: translate(0%, 0%) scale(1)
+
+  @media (max-width: 640px)
+    .desc-wrap
+      margin-top: 50px
+
+  @media (max-width: 999px) and (min-width: 640px)
+    .article-thumb
+      width: 33.3%
+
+@keyframes tada
+  from
+    transform: scale3d(1, 1, 1)
+
+  10%, 20%
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+
+  30%, 50%, 70%, 90%
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+
+  40%, 60%, 80%
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+
+  to
+    transform: scale3d(1, 1, 1)
